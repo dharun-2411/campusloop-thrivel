@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131f"><meta name="description" content="CampusLoop — Your Campus. Your Marketplace. Your Loop. Buy, sell and exchange campus essentials.">
+  <title>CampusLoop — Your Campus. Your Marketplace. Your Loop.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/enhancements.css">
+  <link rel="stylesheet" href="/features.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span><span>campus<span class="brand-light">loop</span><small>THE STUDENT CIRCULAR MARKETPLACE</small></span></a>
+    <nav class="main-nav"><a href="#market" data-mode-link="buy">Buy</a><a href="#market" data-mode-link="rent">Rent</a><a href="#market" data-mode-link="exchange">Exchange</a><button class="nav-sell" id="sellNav">Sell</button><a href="#wanted">Wanted board</a></nav>
+    <div class="top-actions"><button class="icon-btn" id="wishlistNav" title="Wishlist">♡ <span id="wishCount">0</span></button><button class="icon-btn notification-nav" id="notificationsNav" title="Notifications" aria-label="Notifications">🔔 <span id="notifCount">0</span></button><button class="cart-btn" id="cartNav">Bag <span id="cartCount">0</span></button><button class="login-btn" id="accountBtn">Log in</button><button class="menu-btn" id="menuBtn">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR CAMPUS, REIMAGINED</div>
+        <h1>Good things<br>go <span class="gradient-text">round.</span></h1>
+        <p class="hero-desc">The student-to-student marketplace for the things campus life needs. Find a deal, pass it on, keep the good stuff moving.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#market" data-mode-link="buy">Explore marketplace <span>↗</span></a><button class="secondary-btn" id="sellHero">＋ Sell an item</button><button class="secondary-btn" id="exchangeHero">⇄ Exchange</button></div>
+        <div class="hero-proof"><div class="avatar-stack"><i> A </i><i> K </i><i> M </i><i> + </i></div><span><b>Made for students.</b><br>Powered by your campus community.</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glass">
+          <div class="glass-top"><span>THE CAMPUS CYCLE</span><span class="live-dot">● LIVE</span></div>
+          <div class="cube-scene"><div class="cube"><div class="cube-face front">↻</div><div class="cube-face back">C</div><div class="cube-face right">◎</div><div class="cube-face left">↗</div><div class="cube-face top">✳</div><div class="cube-face bottom">CL</div></div></div>
+          <div class="floating-card card-book"><span class="float-icon">📚</span><span><b>Pass it forward</b><small>Books find new readers</small></span></div>
+          <div class="floating-card card-save"><span class="float-icon">♻️</span><span><b>Less waste</b><small>More value, together</small></span></div>
+          <div class="glass-bottom"><span>BUY LOCAL</span><span>SELL SMART</span><span>REPEAT</span></div>
+        </div>
+        <div class="hero-sticker">CAMPUS<br>TO CAMPUS <b>↗</b></div>
+      </div>
+      <div class="hero-foot"><span>01 / A BETTER WAY TO CAMPUS SHOP</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
+
+    <section class="ticker"><div>BUY SMART <b>✳</b> SELL EASY <b>✳</b> KEEP IT CIRCULAR <b>✳</b> MADE FOR CAMPUS <b>✳</b> BUY SMART <b>✳</b> SELL EASY <b>✳</b> KEEP IT CIRCULAR <b>✳</b></div></section>
+
+    <section class="market-section section-wrap" id="market">
+      <div class="section-head"><div><div class="eyebrow">THE CAMPUS FINDS</div><h2 id="marketTitle">Find your next <span class="gradient-text">favourite.</span></h2><p id="marketDescription">Pre-loved, student-priced and ready for a new chapter.</p></div><button class="text-link" id="sellMarket">＋ List an item</button></div>
+      <div class="market-modes" role="tablist" aria-label="Marketplace mode"><button class="market-mode active" type="button" data-mode="buy">Buy</button><button class="market-mode" type="button" data-mode="rent">Rent by the day</button><button class="market-mode" type="button" data-mode="exchange">Exchange</button><button class="market-mode market-mode-sell" type="button" id="sellMode">＋ Sell an item</button></div>
+      <div class="market-tools"><div class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Search books, gadgets, essentials..."><kbd>⌘ K</kbd></div><select id="categoryFilter"><option>All</option><option>Books</option><option>Electronics</option><option>Stationery</option><option>Fashion</option><option>Lab Equipment</option><option>Hostel Essentials</option><option>Sports</option><option>College Essentials</option><option>Other</option></select><select id="conditionFilter"><option>All</option><option>Like New</option><option>Good</option><option>Used</option></select><input id="minPrice" type="number" min="0" aria-label="Minimum price" placeholder="Min ₹"><input id="maxPrice" type="number" min="0" aria-label="Maximum price" placeholder="Max ₹"><select id="sortFilter"><option value="newest">Recently added</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="popular">Most popular</option></select></div>
+      <div class="category-chips" id="categoryChips"><button class="chip active" data-cat="All">All finds</button><button class="chip" data-cat="Books">📚 Books</button><button class="chip" data-cat="Electronics">⚡ Electronics</button><button class="chip" data-cat="Stationery">✏️ Stationery</button><button class="chip" data-cat="Fashion">👟 Fashion</button><button class="chip" data-cat="Lab Equipment">🧪 Lab</button><button class="chip" data-cat="Hostel Essentials">🛏️ Hostel life</button><button class="chip" data-cat="Sports">🏅 Sports</button></div>
+      <div class="product-grid" id="productGrid"><div class="loading">Finding campus treasures...</div></div>
+      <div class="market-bottom"><span id="resultCount">Loading finds...</span><span>Every purchase gives an item a second life. ♻</span></div>
+    </section>
+
+    <section class="feature-band section-wrap project-bench" id="projectBench">
+      <div class="feature-intro"><div class="eyebrow">THE STUDENT PROJECT BENCH</div><h2>From first circuit<br>to <span class="gradient-text">final demo.</span></h2><p>Find affordable parts for electronics, robotics, audio, IoT and maker projects. Rent a tool for a weekend or pass a kit to the next team.</p><a class="text-link" href="#market" data-project-mode="rent">Browse rentable gear ↗</a></div>
+      <div class="feature-cards project-cards"><button class="feature-card" type="button" data-project-category="Electronics"><span class="feature-number">01</span><div class="feature-icon">⌁</div><h3>Embedded & IoT</h3><p>Arduino Uno/Mega, ESP32, sensor packs, USB cables and breadboards.</p></button><button class="feature-card featured" type="button" data-project-category="Lab Equipment"><span class="feature-number">02</span><div class="feature-icon">⌘</div><h3>Robotics & lab</h3><p>Chassis kits, motor drivers, multimeters, logic analyzers and soldering tools.</p></button><button class="feature-card" type="button" data-project-category="Electronics"><span class="feature-number">03</span><div class="feature-icon">♫</div><h3>Audio & media</h3><p>Amplifier boards, speakers, audio interfaces and project cameras.</p></button></div>
+    </section>
+
+    <section class="feature-band section-wrap" id="how">
+      <div class="feature-intro"><div class="eyebrow">NOT JUST ANOTHER STORE</div><h2>A marketplace<br>with <span class="gradient-text">campus spirit.</span></h2><p>Designed around student needs, campus connections and a more circular way to shop.</p></div>
+      <div class="feature-cards">
+        <article class="feature-card"><span class="feature-number">01</span><div class="feature-icon">↗</div><h3>Buy or sell</h3><p>Find student-priced essentials or list your own with photos, condition and a clear price.</p></article>
+        <article class="feature-card featured"><span class="feature-number">02</span><div class="feature-icon">◷</div><h3>Borrow by the day</h3><p>Pick dates for project gear, see the daily rate and refundable deposit, agree on a campus handoff, then return it for the next student.</p></article>
+        <article class="feature-card"><span class="feature-number">03</span><div class="feature-icon">⇄</div><h3>Swap what you have</h3><p>Offer one of your listings for another student's item. Keep useful things moving without buying new.</p></article>
+      </div>
+    </section>
+
+    <section class="wanted-section section-wrap" id="wanted">
+      <div class="wanted-copy"><div class="eyebrow">CAN'T FIND IT?</div><h2>Put it out<br><span class="gradient-text">into the loop.</span></h2><p>Post what you need. Someone on campus might have exactly what you're looking for.</p><button class="primary-btn" id="wantedBtn">Post a wanted request ↗</button></div>
+      <div class="wanted-panel"><div class="wanted-panel-head"><div><span class="live-dot">● COMMUNITY BOARD</span><h3>Wanted on campus</h3></div><button class="text-link" id="browseWanted">Browse all ↗</button></div><div id="wantedList"><div class="loading">Loading requests...</div></div></div>
+    </section>
+
+    <section class="ai-section section-wrap">
+      <div class="ai-orb"><div class="ai-orb-inner">✳</div><span class="orb-ring ring-one"></span><span class="orb-ring ring-two"></span></div>
+      <div class="ai-copy"><div class="eyebrow">YOUR CAMPUS SIDEKICK</div><h2>Meet <span class="gradient-text">Loop AI.</span></h2><p>Not sure where to start? Tell Loop AI what you need, your budget or your next project. It will scan campus listings and suggest a few finds.</p><button class="primary-btn" id="openAI">Ask Loop AI <span>↗</span></button><small>Smart local matching · No external AI key required</small></div>
+    </section>
+
+    <section class="feature-band section-wrap sustainability-section">
+      <div class="feature-intro"><div class="eyebrow">A SMALLER FOOTPRINT</div><h2>Useful things<br>deserve <span class="gradient-text">another life.</span></h2><p>Every campus handoff keeps a useful item in circulation and helps students spend less on the essentials.</p></div>
+      <div class="wanted-panel"><div class="eyebrow">THE CAMPUS LOOP</div><h3>Buy what you need.<br>Pass on what you don't.</h3><p>Keep quality goods moving between students instead of gathering dust or going to waste.</p><span class="live-dot">● LOCAL · PRACTICAL · CIRCULAR</span></div>
+    </section>
+
+    <section class="section-wrap testimonials-section">
+      <div class="section-head"><div><div class="eyebrow">FROM ONE STUDENT TO ANOTHER</div><h2>Good finds, <span class="gradient-text">good people.</span></h2></div></div>
+      <div class="wanted-panel"><h3>Student stories are just getting started.</h3><p>Once students share their CampusLoop experiences, their stories will show up here.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">C</span><span>campus<span class="brand-light">loop</span><small>THE STUDENT CIRCULAR MARKETPLACE</small></span></a><p>Your Campus. Your Marketplace. Your Loop.</p><span>© 2026 CAMPUSLOOP</span></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <button class="ai-fab" id="aiFab" title="Ask Loop AI">✳<span>Ask Loop AI</span></button>
+  <script src="/app.js?v=local-product-photos"></script>
+</body></html>

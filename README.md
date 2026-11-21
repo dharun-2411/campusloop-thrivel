@@ -33,3 +33,4 @@ The server creates `data/db.json` on first run. This local file is convenient fo
 The current project does **not** use React, Vite, Tailwind, Express, MongoDB, or Mongoose. It also does not support direct image uploads; listings accept HTTPS image URLs. Those integrations require a separate migration and, for MongoDB and Gemini, external configuration. `.env.example` intentionally does not suggest that MongoDB is already connected.
 
 Before public deployment, replace JSON persistence with a transactional database, add CSRF protection and production-grade session storage, configure HTTPS, and use managed image storage and moderation. The local demo uses bearer tokens in browser storage and is not production-hardened.
+# campusloop-thrivel

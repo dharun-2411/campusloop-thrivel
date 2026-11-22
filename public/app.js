@@ -1,3 +1,4 @@
+if (typeof window !== "undefined" && typeof document !== "undefined") {
 const API = "";
 const state = { token:localStorage.getItem("cl_token")||"", user:null, products:[], catalog:[], cart:JSON.parse(localStorage.getItem("cl_cart")||"[]"), wishlist:JSON.parse(localStorage.getItem("cl_wishlist")||"[]"), category:"All", mode:"buy", unread:0 };
 const $ = id => document.getElementById(id);
@@ -89,3 +90,4 @@ document.addEventListener("click",async e=>{if(e.target.id==="logoutBtn"){await 
 $("menuBtn").onclick=()=>{const nav=document.querySelector(".main-nav");nav.style.display=nav.style.display==="flex"?"none":"flex";nav.style.position="absolute";nav.style.top="68px";nav.style.left="0";nav.style.right="0";nav.style.padding="20px";nav.style.background="#191d2c";nav.style.flexDirection="column";nav.style.zIndex="25"};
 init();
 setInterval(()=>{if(state.user)loadNotifications()},30000);
+}

@@ -34,3 +34,15 @@ The current project does **not** use React, Vite, Tailwind, Express, MongoDB, or
 
 Before public deployment, replace JSON persistence with a transactional database, add CSRF protection and production-grade session storage, configure HTTPS, and use managed image storage and moderation. The local demo uses bearer tokens in browser storage and is not production-hardened.
 # campusloop-thrivel
+
+## Deploy to Vercel
+
+The project includes a Vercel serverless API adapter in `api/[...path].js`; `vercel.json` configures `public/` as the static output directory for the site and local product photos. The GitHub repository is `dharun-2411/campusloop-thrivel`.
+
+1. Push the deployment adapter and `vercel.json` to the `main` branch, then import or redeploy `dharun-2411/campusloop-thrivel` from Vercel.
+2. Select **Other** as the framework preset and keep the repository root as the project root. No build command is required; the output directory is configured in `vercel.json`.
+3. Optionally add `ADMIN_EMAIL` and `GEMINI_API_KEY` under Project Settings → Environment Variables, then deploy.
+
+The GitHub import route builds on Vercel's Linux workers. A local Windows CLI attempt here could not complete because Vercel's builder requires filesystem symlinks (`EPERM`), and this terminal is not authenticated to a Vercel account.
+
+**Demo storage limitation:** Vercel uses `/tmp` for this app's JSON data, and that storage is temporary and isolated between serverless instances. The deployed demo can start, but accounts, listings, rentals, and orders are not durable. For a real public marketplace, connect a persistent database before relying on it; this repository currently has no MongoDB/production database adapter.

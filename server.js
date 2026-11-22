@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const os = require("os");
 
 const envFile = path.join(__dirname, ".env");
 if (fs.existsSync(envFile)) {
@@ -12,7 +13,7 @@ if (fs.existsSync(envFile)) {
 }
 
 const PORT = process.env.PORT || 3000;
-const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, "data");
+const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : process.env.VERCEL ? path.join(os.tmpdir(), "campusloop-data") : path.join(__dirname, "data");
 const DB_FILE = path.join(DATA_DIR, "db.json");
 const PUBLIC_DIR = path.join(__dirname, "public");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -434,7 +435,12 @@ async function handle(req, res) {
   fs.createReadStream(target).pipe(res);
 }
 
-http.createServer((req,res)=>handle(req,res).catch(err=>send(res,500,{error:err.message || "Server error"}))).listen(PORT, ()=> {
-  console.log(`CampusLoop running at http://localhost:${PORT}`);
-  console.log("Data is stored locally in ./data/db.json");
-});
+const requestHandler = (req,res) => handle(req,res).catch(err=>send(res,500,{error:err.message || "Server error"}));
+module.exports = requestHandler;
+
+if (require.main === module) {
+  http.createServer(requestHandler).listen(PORT, ()=> {
+    console.log(`CampusLoop running at http://localhost:${PORT}`);
+    console.log(`Data is stored locally in ${DB_FILE}`);
+  });
+}

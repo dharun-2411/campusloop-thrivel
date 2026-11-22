@@ -37,7 +37,7 @@ Before public deployment, replace JSON persistence with a transactional database
 
 ## Deploy to Vercel
 
-The project includes a Vercel serverless API adapter in `api/[...path].js`; `vercel.json` configures `public/` as the static output directory for the site and local product photos. The GitHub repository is `dharun-2411/campusloop-thrivel`.
+The project includes a Vercel serverless API adapter in `api/[...path].js`; `vercel.json` selects Vercel's **Other** preset (preventing Node framework auto-detection) and configures `public/` as the static output directory for the site and local product photos. The GitHub repository is `dharun-2411/campusloop-thrivel`.
 
 1. Push the deployment adapter and `vercel.json` to the `main` branch, then import or redeploy `dharun-2411/campusloop-thrivel` from Vercel.
 2. Select **Other** as the framework preset and keep the repository root as the project root. No build command is required; the output directory is configured in `vercel.json`.
